@@ -1,0 +1,17 @@
+import pandas as pd
+import os
+
+# Replace this with the actual dataset file path and name
+dataset_path = r"d:\sem7\NLP LAB\EXPERIEMNT 1\dataset.csv"
+
+if not os.path.exists(dataset_path):
+    raise FileNotFoundError(f"Dataset file not found: {dataset_path}")
+
+# Load dataset into a pandas DataFrame
+try:
+    df = pd.read_csv(dataset_path)
+except Exception as e:
+    raise RuntimeError(f"Failed to load dataset: {e}")
+
+print(df.head())
+print(f"Loaded dataset with {len(df)} rows and {len(df.columns)} columns.")
